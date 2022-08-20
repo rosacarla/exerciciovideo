@@ -1,24 +1,30 @@
-import React from 'react'; 
-import "./App.css";
+//criacao de class component similar ao que foi feito function e array funtion
+import React, {Component} from 'react'; //importado o componente Component como boa pratica
 
-const Botao = (props) => { //criados botoes para a pagina
-  return ( //adicionado estilo1 css aos botoes
-    <div>
-      <button className="estilo1"> { props.texto } </button>
-    </div>
-  )
+//criado componente do tipo classe
+class App extends Component{ //App estende de Component (heranca)
+
+  //render() é metodo obrigatorio em componente do tipo classe; construtor nao é obrigatorio
+  render(){  //nao precisa especificar tipo do metodo como se faz em Java com void etc.
+    return (  //render() deve ter a funcao return para retornar uma html
+      <div>
+        Olá, Mundo!
+      </div>
+    )
+  }
 }
 
-function App() {
-  return (
-    <div>
-      <Botao texto="Gravar" />
-      <br></br>
-      <Botao texto="Excluir" />
-      <br></br>
-      <Botao texto="Limpar" />
-    </div>
-  );
-}
 
 export default App;
+
+
+/* Funcionaria sem importacao do Component com este codigo:
+
+import React from 'react';
+
+class App extends React.Component{
+
+
+}
+
+export default App;*/
