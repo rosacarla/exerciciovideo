@@ -1,4 +1,4 @@
-//criacao de class component similar ao que foi feito function e array funtion
+//criacao de class component similar ao que foi feito com function e array funtion
 import React, {Component} from 'react'; //importado o componente Component como boa pratica
 
 //criado componente do tipo classe
