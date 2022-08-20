@@ -1,9 +1,19 @@
 import React from 'react'; 
 
+const Nome = () => {
+  return (
+    <div>
+      Carla Edila
+    </div>
+  )
+}
+
+
+
 function App() {
   return (
     <div>
-      Olá, mundo!
+      <Nome/>
     </div>
   );
 }
