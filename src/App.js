@@ -1,14 +1,22 @@
-//criacao de class component similar ao que foi feito com function e array function
-import React, {Component} from 'react'; //importado o componente Component como boa pratica
+//class component complexo permite aplicar estado com variaveis proprias do componente
+import React, {Component} from 'react'; 
 
-//criado componente do tipo classe
-class App extends Component{ //App estende de Component (heranca)
+class App extends Component{ //adiciona metodo construtor para criar estado
 
-  //render() é metodo obrigatorio em componente do tipo classe; metodo construtor nao é obrigatorio
-  render(){  //nao precisa especificar tipo do metodo como se faz em Java com void etc...
-    return (  //render() deve ter a funcao return para retornar uma html
+  constructor(props){  //props inserido como parametro do metodo construtor
+    super(props);
+
+    this.state = {  //especifica o estado dentro do construtor; por padrao usa-se nomenclatura "state"
+      titulo: "Primeira pagina com Class Component"  //atributo do componente 
+
+    }
+  }
+
+  //imprime na tela a variavel titulo por meio de um <h1>, acessada com this.state
+  render(){  
+    return (  
       <div>
-        Olá, Mundo!
+        <h1> {this.state.titulo} </h1> 
       </div>
     )
   }
@@ -16,15 +24,3 @@ class App extends Component{ //App estende de Component (heranca)
 
 
 export default App;
-
-
-/* Funcionaria sem importacao do Component com este codigo:
-
-import React from 'react';
-
-class App extends React.Component{
-
-
-}
-
-export default App;*/
