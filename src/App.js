@@ -1,40 +1,48 @@
-//class component complexo permite aplicar estado com variaveis proprias do componente
+/* Com a utilização de Class Componente e state, crie um novo componente que
+possua 2 (dois) botões e uma label com um número que começa em 0 (zero):
+Botão 1: adicionar 1 ao valor da label.
+Botão 2: subtrair 1 ao valor da label.
+Label: demonstrar o valor no componente. */
+
 import React, {Component} from 'react'; 
+import './App.css';
 
 class App extends Component{ //adiciona metodo construtor para criar estado
 
   constructor(props){  //props inserido como parametro do metodo construtor
     super(props);
-
-    this.state = {  //especifica o estado dentro do construtor; por padrao usa-se nomenclatura "state"
-      titulo: "Primeira pagina com Class Component"  //atributo do componente com sua variavel
-    }
-
-    //aplicacao do metodo bind() ao construtor do componente, permite a execucao de mudar()
-
-    this.mudar = this.mudar.bind(this); //executa o bind e traz a referencia para dentro dele
+    this.state = {  //especifica o estado dentro do construtor
+      contador: 0 //declara/inicia variavel cocntador
+    }   //aplicacao do metodo bind() ao construtor permite a execucao de aumentar() e diminuir()
+    this.aumentar = this.aumentar.bind(this);
+    this.diminuir = this.diminuir.bind(this);    
   }
 
-  mudar(){  //metodo mudar
+  aumentar(){  //metodo aumentar
+
+    let state = this.state;  //obtem estado do componente para variavel chamada state
+    state.contador +=1;  //dentro de state tem a variavel contador
+    this.setState(state); //atualiza estado do componente com aumento da variavel
+  }
+
+  diminuir(){ //metodo diminuir
+
+    let state = this.state;
+    state.contador -=1;  //nos 2 metodos (aumentar, diminuir), modifica-se valor do contador para aplicar novo estado ao componente
+    this.setState(state); //atualiza estado do componente com diminuicao da variavel
+  }
     
-    //criada variavel para mudar o titulo da pagina
-    var novoTitulo = "Aprendi a utilizar Class Component";
-
-    //executa metodo setState, herdado de React.Component, para modificar estado do componente
-    this.setState({titulo:novoTitulo});  //recarrega estado com variavel ou string e atualiza a tela automaticamente
-
-  }
-
-  //criacao de botao para mudar titulo da pagina automaticamente sem recarrega-la (sem F5), nem usar servidor
+   
+  //criacao de botoes para alterar valores da variavel da state
   render(){  
-    return (  //incluido atributo onClick para executar apos click no botao
+    return (
       <div>
-        <h1> {this.state.titulo} </h1> 
-        <button onClick={this.mudar}>Mudar Título</button>
+        <button onClick={this.aumentar}> Aumentar </button> <br></br>
+        <button onClick={this.diminuir}> Diminuir </button> <br></br>
+        Valor: {this.state.contador}
       </div>
     )
   }
 }
-
 
 export default App;
