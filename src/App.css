@@ -2,3 +2,14 @@
 .estilo{
   color:blueviolet;
 }
+
+.estilo1{
+  background: rgb(237, 209, 138);
+  color: black;
+  border-style: outset;
+  border-color: rgb(240, 217, 189);
+  height: 40px;
+  width: 160px;
+  font: bold 12px arial, sans-serif;
+  text-shadow:none;
+}

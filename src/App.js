@@ -1,27 +1,23 @@
 import React from 'react'; 
 import "./App.css";
 
-const Nome = (props) => {  //criado atributo texto;
-  return (  //<div></div> quebra a linha; importa a classe estilo de App.css
-    <div className='estilo'> 
-      { props.texto } 
+const Botao = (props) => { //criados botoes para a pagina
+  return ( //adicionado estilo1 css aos botoes
+    <div>
+      <button className="estilo1"> { props.texto } </button>
     </div>
   )
 }
 
-
-
-function App() { //reuso de componente com atributo que recebe valores diferentes
-  return (  //retorna sempre uma unica tag, poderia ser tag vazia <></> no lugar de <p></p>
-    <p>
-      <div>
-        <Nome texto="Carla Edila" />
-        <Nome texto="Alisson" />
-        <Nome texto="Carol" />
-        <Nome texto="Zilda" />
-        <Nome texto="Doki" />
-      </div>
-      </p>
+function App() {
+  return (
+    <div>
+      <Botao texto="Gravar" />
+      <br></br>
+      <Botao texto="Excluir" />
+      <br></br>
+      <Botao texto="Limpar" />
+    </div>
   );
 }
 
