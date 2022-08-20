@@ -7,7 +7,7 @@ class App extends Component{ //adiciona metodo construtor para criar estado
     super(props);
 
     this.state = {  //especifica o estado dentro do construtor; por padrao usa-se nomenclatura "state"
-      titulo: "Primeira pagina com Class Component"  //atributo do componente 
+      titulo: "Primeira pagina com Class Component"  //atributo do componente com sua variavel
 
     }
   }
