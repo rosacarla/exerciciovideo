@@ -12,11 +12,16 @@ class App extends Component{ //adiciona metodo construtor para criar estado
     }
   }
 
-  //imprime na tela a variavel titulo por meio de um <h1>, acessada com this.state
+  mudar(){  //metodo mudar
+    console.log("mudou"); //mensagem para testar se metodo mudar funcionou
+  }
+
+  //criacao de botao para mudar titulo da pagina automaticamente sem recarrega-la (sem F5)
   render(){  
-    return (  
+    return (  //incluido metodo onClick para executar após click no botao
       <div>
         <h1> {this.state.titulo} </h1> 
+        <button onClick={this.mudar}>Mudar Título</button>
       </div>
     )
   }
