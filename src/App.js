@@ -18,7 +18,7 @@ class App extends Component{ //adiciona metodo construtor para criar estado
 
   //criacao de botao para mudar titulo da pagina automaticamente sem recarrega-la (sem F5)
   render(){  
-    return (  //incluido metodo onClick para executar após click no botao
+    return (  //incluido atributo onClick para executar apos click no botao
       <div>
         <h1> {this.state.titulo} </h1> 
         <button onClick={this.mudar}>Mudar Título</button>
