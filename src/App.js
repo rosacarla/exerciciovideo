@@ -1,46 +1,62 @@
-/* Com a utilização de Class Componente e state, crie um novo componente que
-possua 2 (dois) botões e uma label com um número que começa em 0 (zero):
-Botão 1: adicionar 1 ao valor da label.
-Botão 2: subtrair 1 ao valor da label.
-Label: demonstrar o valor no componente. */
+/* SOMATIVA 1: 
+1) No componente, deverá colocar um título de Login, 2 inputs (e-mail e senha), um botão de validação (Acessar) e uma label. 
+2) Ao clicar no botão “Acessar”, deverá verificar se o campo de e-mail é igual a “eduardo.lino@pucpr.br” e senha igual a “123456”
+(pode colocar seu e-mail e senha desejado). 
+3) Caso os valores sejam iguais aos valores do enunciado, deverá ser mostrada a mensagem “Acessado com sucesso!” na label abaixo do botão.
+4) Caso algum dos dois campos estejam com valores diferentes do enunciado, deverá ser mostrada a mensagem “Usuário ou senha incorretos!”. */
 
-import React, {Component} from 'react'; 
-import './App.css';
+import React, {Component} from 'react';
 
-class App extends Component{ //adiciona metodo construtor para criar estado
+class App extends Component{ //adiciona metodo construtor para criar estado  
 
   constructor(props){  //props inserido como parametro do metodo construtor
     super(props);
-    this.state = {  //especifica o estado dentro do construtor
-      contador: 0 //declara/inicia variavel cocntador
-    }   //aplicacao do metodo bind() ao construtor permite a execucao de aumentar() e diminuir()
-    this.aumentar = this.aumentar.bind(this);
-    this.diminuir = this.diminuir.bind(this);    
-  }
 
-  aumentar(){  //metodo aumentar
+    this.state = {
+      email: '', //variavel de estado email
+    
+      senha: '',  //variavel de estado senha
+    
+      mensagem: '' //variavel de estado mensagem
+    }
 
-    let state = this.state;  //obtem estado do componente para variavel chamada state
-    state.contador +=1;  //dentro de state tem a variavel contador
-    this.setState(state); //atualiza estado do componente com aumento da variavel
-  }
-
-  diminuir(){ //metodo diminuir
-
-    let state = this.state;
-    state.contador -=1;  //nos 2 metodos (aumentar, diminuir), modifica-se valor do contador para aplicar novo estado ao componente
-    this.setState(state); //atualiza estado do componente com diminuicao da variavel
+    this.mudaemail = this.mudaemail.bind(this);
+    this.mudasenha = this.mudasenha.bind(this);
+    this.acessar = this.acessar.bind(this);  
   }
     
-   
-  //criacao de botoes para alterar valores da variavel da state
-  render(){  
+  mudaemail(event) {
+    let state = this.state;
+    state.email = event.target.value;
+    this.setState(state);
+  }
+
+  mudasenha(event) {
+    let state = this.state;
+    state.senha = event.target.value;
+    this.setState(state);
+  }
+
+  acessar(event) {
+    let state = this.state;
+    if (state.email === "cesrs8@gmail.com" && state.senha === "123456") {
+      state.mensagem = 'Acessado com sucesso!'
+    }
+    if (state.email !== "cesrs8@gmail.com" || state.senha !== "123456") {
+      state.mensagem = 'Usuário ou senha incorretos!'
+    }  
+    this.setState(state);
+  }
+
+  render() {  
     return (
-      <div>
-        <button onClick={this.aumentar}> Aumentar </button> <br></br>
-        <button onClick={this.diminuir}> Diminuir </button> <br></br>
-        Valor: {this.state.contador}
-      </div>
+      <div> 
+        <h1> Login </h1>
+        <input required type="text" placeholder="e-mail" size="20" name="email" onChange={(e) => this.mudaemail(e)} /><br></br> 
+        <input type="text" placeholder="******" size="6" name="senha" onChange={(e) => this.mudasenha(e)} /><br></br>
+        <button onClick={this.acessar}> Acessar </button> <br></br>
+        <h3> {this.state.mensagem} </h3><br></br>
+      </div> 
     )
   }
 }
