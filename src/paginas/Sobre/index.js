@@ -11,7 +11,7 @@ class Sobre extends Component{
         return(
             <div>
                 <h1>Sobre</h1>
-                <h5>Aplicação desenvolvida em linguagem Java Script e CSS</h5>
+                <h5>Aplicação desenvolvida em linguagens JavaScript, HTML, CSS</h5>
                 <h5>Foi utilizada a biblioteca JavaScript do React JS versão 18.2.0</h5>
                 <Link to="/"><button>Página Inicial</button></Link> <br></br>
             </div>
