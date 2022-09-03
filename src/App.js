@@ -5,8 +5,20 @@
 3) Caso os valores sejam iguais aos valores do enunciado, deverá ser mostrada a mensagem “Acessado com sucesso!” na label abaixo do botão.
 4) Caso algum dos dois campos estejam com valores diferentes do enunciado, deverá ser mostrada a mensagem “Usuário ou senha incorretos!”. */
 
-import React, {Component} from 'react';
+import React from 'react';
+import Rotas from './rotas';
 
+function App() {  //Cria componente Rotas
+  return (
+    <div>
+      <Rotas />
+    </div>
+  );
+}
+
+export default App;
+
+/*
 class App extends Component{ //adiciona metodo construtor para criar estado  
 
   constructor(props){  //props inserido como parametro do metodo construtor
@@ -59,6 +71,5 @@ class App extends Component{ //adiciona metodo construtor para criar estado
       </div> 
     )
   }
-}
+}*/
 
-export default App;
