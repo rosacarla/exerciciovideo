@@ -1,14 +1,14 @@
 import firebase from 'firebase/app';  // importa a plataformna firebase //
 import 'firebase/firestore';  // importa o banco de dados Firestore //
-import 'firebase/auth';  // importa auth // 
+import 'firebase/auth';  // importa o Authentication do Firebase // 
 
 const firebaseConfig = {  // Colocar dados de configuracao obtidos na plataforma Firebase //
-    apiKey: "XX_xx",
-    authDomain: "projetoead-xx.firebaseapp.com",
-    projectId: "projetoead-xx",
-    storageBucket: "projetoead-xx.appspot.com",
-    messagingSenderId: "000333",
-    appId: "0000"
+  apiKey: "REACT_APP_FIREBASE_API_KEY",
+  authDomain: " REACT_APP_FIREBASE_AUTH_DOMAIN",
+  projectId: "REACT_APP_FIREBASE_PROJECTED_ID",
+  storageBucket: "REACT_APP_FIREBASE_STORAGE_BUCKET",
+  messagingSenderId: "REACT_APP_FIREBASE_MESSAGING_SENDER_ID",
+  appId: "REACT_APP_FIREBASE_APP_ID"
   };
 
   // Inicializacao do Firebase
